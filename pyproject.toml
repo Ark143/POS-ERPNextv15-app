@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=40.6.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "simple_pos"
+version = "0.0.1"
+description = "Simple Point of Sale Application for ERPNext v15"
+authors = [
+    {name = "Ark143", email = "support@example.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "frappe>=15.0.0",
+    "erpnext>=15.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/Ark143/POS-ERPNextv15-app"
+Repository = "https://github.com/Ark143/POS-ERPNextv15-app"
+
+[tool.setuptools]
+packages = ["simple_pos"]
+
+[tool.setuptools.package-data]
+simple_pos = ["*.json", "*.html", "*.css", "*.js"]
