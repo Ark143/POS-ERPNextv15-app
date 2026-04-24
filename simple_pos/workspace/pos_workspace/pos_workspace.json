@@ -1,0 +1,69 @@
+{
+ "category": "Simple POS",
+ "charts": [],
+ "creation": "2024-04-24 00:00:00.000000",
+ "doc_type": "POS Profile",
+ "extends_another_page": 0,
+ "forbidden_doctypes": [],
+ "idx": 0,
+ "is_standard": 1,
+ "label": "POS Workspace",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "POS Profile",
+   "link_count": 0,
+   "link_to": "POS Profile",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "POS Invoice",
+   "link_count": 0,
+   "link_to": "Sales Invoice",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "POS Sales Report",
+   "link_count": 0,
+   "link_to": "POS Sales Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "POS",
+   "link_count": 0,
+   "link_to": "pos",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2024-04-24 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Simple POS",
+ "name": "POS Workspace",
+ "owner": "Administrator",
+ "parent_page": "",
+ "quick_lists": [],
+ "shortcuts": [
+  {
+   "description": "Create new POS Invoice",
+   "doc_view": "List",
+   "label": "New POS Invoice",
+   "link_to": "Sales Invoice",
+   "type": "DocType"
+  }
+ ]
+}

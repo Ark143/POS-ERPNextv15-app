@@ -1,0 +1,116 @@
+<style>
+    .pos-receipt {
+        font-family: 'Courier New', monospace;
+        font-size: 12px;
+        width: 80mm;
+        padding: 5mm;
+    }
+    .pos-receipt-header {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .pos-receipt-header h2 {
+        margin: 0;
+        font-size: 16px;
+    }
+    .pos-receipt-header p {
+        margin: 5px 0;
+        font-size: 10px;
+    }
+    .pos-receipt-divider {
+        border-top: 1px dashed #000;
+        margin: 10px 0;
+    }
+    .pos-receipt-item {
+        display: flex;
+        justify-content: space-between;
+        margin: 5px 0;
+    }
+    .pos-receipt-item-name {
+        flex: 1;
+    }
+    .pos-receipt-item-qty {
+        text-align: center;
+        width: 50px;
+    }
+    .pos-receipt-item-amount {
+        text-align: right;
+        width: 80px;
+    }
+    .pos-receipt-totals {
+        margin-top: 10px;
+    }
+    .pos-receipt-total {
+        display: flex;
+        justify-content: space-between;
+        margin: 5px 0;
+    }
+    .pos-receipt-grand-total {
+        font-weight: bold;
+        font-size: 14px;
+        border-top: 1px solid #000;
+        padding-top: 5px;
+    }
+    .pos-receipt-footer {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 10px;
+    }
+</style>
+
+<div class="pos-receipt">
+    <div class="pos-receipt-header">
+        <h2>{{ doc.company }}</h2>
+        <p>{{ frappe.db.get_value("Company", doc.company, "address") }}</p>
+        <p>Tel: {{ frappe.db.get_value("Company", doc.company, "phone_no") }}</p>
+    </div>
+    
+    <div class="pos-receipt-divider"></div>
+    
+    <div>
+        <p><strong>Invoice:</strong> {{ doc.name }}</p>
+        <p><strong>Date:</strong> {{ doc.posting_date }}</p>
+        <p><strong>Customer:</strong> {{ doc.customer_name }}</p>
+    </div>
+    
+    <div class="pos-receipt-divider"></div>
+    
+    <div class="pos-receipt-items">
+        {% for item in doc.items %}
+        <div class="pos-receipt-item">
+            <div class="pos-receipt-item-name">{{ item.item_name }}</div>
+            <div class="pos-receipt-item-qty">{{ item.qty }}</div>
+            <div class="pos-receipt-item-amount">{{ item.amount }}</div>
+        </div>
+        {% endfor %}
+    </div>
+    
+    <div class="pos-receipt-divider"></div>
+    
+    <div class="pos-receipt-totals">
+        <div class="pos-receipt-total">
+            <span>Subtotal:</span>
+            <span>{{ doc.subtotal }}</span>
+        </div>
+        <div class="pos-receipt-total">
+            <span>Tax:</span>
+            <span>{{ doc.total_taxes_and_charges }}</span>
+        </div>
+        <div class="pos-receipt-total pos-receipt-grand-total">
+            <span>TOTAL:</span>
+            <span>{{ doc.grand_total }}</span>
+        </div>
+    </div>
+    
+    <div class="pos-receipt-divider"></div>
+    
+    <div>
+        <p><strong>Payment Method:</strong> {{ doc.mode_of_payment }}</p>
+        <p><strong>Paid Amount:</strong> {{ doc.paid_amount }}</p>
+    </div>
+    
+    <div class="pos-receipt-footer">
+        <p>Thank you for your purchase!</p>
+        <p>{{ frappe.utils.now() }}</p>
+    </div>
+</div>
