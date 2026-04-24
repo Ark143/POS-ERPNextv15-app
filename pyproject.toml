@@ -1,28 +1,24 @@
-[build-system]
-requires = ["setuptools>=40.6.0", "wheel"]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "simple_pos"
-version = "0.0.1"
-description = "Simple Point of Sale Application for ERPNext v15"
 authors = [
-    {name = "Ark143", email = "support@example.com"}
+    { name = "Ark143", email = "support@example.com"}
 ]
-license = {text = "MIT"}
-readme = "README.md"
+description = "Simple Point of Sale Application for ERPNext v15"
 requires-python = ">=3.8"
+readme = "README.md"
+dynamic = ["version"]
 dependencies = [
-    "frappe>=15.0.0",
-    "erpnext>=15.0.0",
+    # Managed by bench via tool.bench.frappe-dependencies
 ]
 
-[project.urls]
-Homepage = "https://github.com/Ark143/POS-ERPNextv15-app"
-Repository = "https://github.com/Ark143/POS-ERPNextv15-app"
+[build-system]
+requires = ["flit_core >=3.4,<4"]
+build-backend = "flit_core.buildapi"
 
-[tool.setuptools]
-packages = ["simple_pos"]
+# These dependencies are only installed when developer mode is enabled
+[tool.bench.dev-dependencies]
+# package_name = "~=1.1.0"
 
-[tool.setuptools.package-data]
-simple_pos = ["*.json", "*.html", "*.css", "*.js", "hooks.py", "patches.txt", "api/*.py", "doctype/**/*.json", "doctype/**/*.py", "page/**/*.json", "page/**/*.js", "page/**/*.html", "page/**/*.css", "print_format/**/*.json", "print_format/**/*.html", "report/**/*.json", "report/**/*.py", "workspace/**/*.json"]
+[tool.bench.frappe-dependencies]
+frappe = ">=15.0.0,<16.0.0"
+erpnext = ">=15.0.0,<16.0.0"

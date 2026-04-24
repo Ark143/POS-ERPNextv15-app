@@ -1,3 +1,0 @@
-# ERPNext and Frappe dependencies
-frappe>=15.0.0
-erpnext>=15.0.0
