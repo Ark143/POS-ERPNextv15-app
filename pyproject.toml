@@ -1,5 +1,5 @@
 [project]
-name = "simple_pos"
+name = "pos_erpnext_v15_app"
 authors = [
     { name = "Ark143", email = "support@example.com"}
 ]
@@ -10,6 +10,10 @@ dynamic = ["version"]
 dependencies = [
     # Managed by bench via tool.bench.frappe-dependencies
 ]
+
+[project.urls]
+Homepage = "https://github.com/Ark143/POS-ERPNextv15-app"
+Repository = "https://github.com/Ark143/POS-ERPNextv15-app"
 
 [build-system]
 requires = ["flit_core >=3.4,<4"]
