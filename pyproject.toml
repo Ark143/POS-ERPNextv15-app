@@ -25,4 +25,4 @@ Repository = "https://github.com/Ark143/POS-ERPNextv15-app"
 packages = ["simple_pos"]
 
 [tool.setuptools.package-data]
-simple_pos = ["*.json", "*.html", "*.css", "*.js"]
+simple_pos = ["*.json", "*.html", "*.css", "*.js", "hooks.py", "patches.txt"]
