@@ -1,0 +1,1 @@
+# POS Payment Method DocType

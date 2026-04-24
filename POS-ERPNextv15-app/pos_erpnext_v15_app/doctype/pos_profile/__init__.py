@@ -1,0 +1,1 @@
+# POS Profile DocType
